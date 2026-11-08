@@ -13,7 +13,7 @@ function EquipmentCard({ item, onBorrow, onClick }) {
         boxShadow: '0 8px 20px rgba(0, 0, 0, 0.3)',
         display: 'flex',
         flexDirection: 'column',
-        justify: 'space-between',
+        justifyContent: 'space-between',
         transition: 'transform 0.2s ease, border-color 0.2s ease'
       }}
       onMouseEnter={(e) => e.currentTarget.style.borderColor = '#FF653F'}

@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { mockEquipments } from '../mockData';
 import EquipmentCard from '../components/EquipmentCard';
 import BorrowModal from '../components/BorrowModal';
 
 function Home() {
+  const navigate = useNavigate();
+
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('ทั้งหมด');
   const [selectedStatus, setSelectedStatus] = useState('ทั้งหมด');
@@ -52,10 +55,9 @@ function Home() {
     handleCloseModal();
   };
 
-  // ฟังก์ชันนี้จะทำงานเมื่อคลิกที่ตัวการ์ดอุปกรณ์
+  // ฟังก์ชันนี้จะทำงานเมื่อคลิกที่ตัวการ์ดอุปกรณ์ เพื่อพาไปหน้า Detail
   const handleCardClick = (item) => {
-    alert(`เปิดดูรายละเอียดและรีวิวของ: ${item.name}`);
-    // เดี๋ยวเราจะเปลี่ยนตรงนี้ให้ลิงก์ไปหน้า Detail ต่อไปครับ
+    navigate(`/equipment/${item.id}`);
   };
 
   return (
